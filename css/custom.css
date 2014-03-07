@@ -4,13 +4,35 @@
   border-radius: 80px;
   -webkit-border-radius: 80px;
   -moz-border-radius: 80px;
-  background: url(http://www.gravatar.com/avatar/068dacb310f3395cd781e2a7cc729c63?s=160) no-repeat;
   }
+
+  .gravatar-lg {
+  background: url(http://www.gravatar.com/avatar/068dacb310f3395cd781e2a7cc729c63?s=160) no-repeat;
+}
+
+.gravatar-sm {
+  background: url(http://www.gravatar.com/avatar/068dacb310f3395cd781e2a7cc729c63?s=80) no-repeat;
+}
+
 .row {
   margin-left: 5%;
+  margin-right: 5%;
 }
 .posts li {
   list-style: none;
+}
+
+.article_link {
+  margin: 3px;
+  /*padding: 10px;*/
+  /*font-size: 150%;*/
+}
+
+.footer_links li {
+  float: left;
+  margin: 5px;
+  list-style: none;
+
 }
 
 .contact li {

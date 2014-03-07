@@ -20,27 +20,35 @@
 <body>
   <div class="row">
     <!-- <div class="site"> -->
-    <div class="large-4 columns">
+    <div class="large-3 medium-2 columns">
       <div class="header">
         <h4 class="title"><a href="/">{{ site.name }}</a>
         </h4>
-          <div class="circular"></div>
-        <p><strong>{{ site.job_title }}</strong></p>
-        <!-- <a class="extra" href="/">home</a> -->
-      </div>
-      <div class="contact">
-        <p>
-            <ul>
-            <li>{{ site.email }}</li>
-            <li><a href="{{ site.url }}/cv" target="_blank">resume</a></li>
-            <li><a href="https://github.com/{{ site.github }}">github</a></li>
-            <li><a href="https://twitter.com/{{ site.twitter }}">twitter</a></li>
-          </ul>
-        </p>
+        <div class="show-for-large-up">
+          <div class="circular gravatar-lg show-for-large-up"></div>
+          <div class="circular gravatar-sm show-for-medium-up"></div>
+          <p>
+            <strong>{{ site.job_title }}</strong>
+          </p>
+          <!-- <a class="extra" href="/">home</a> -->
+          <div class="contact">
+            <p>
+              <ul>
+                <li>{{ site.email }}</li>
+                <li><a href="{{ site.url }}/cv" target="_blank">resume</a>
+                </li>
+                <li><a href="https://github.com/{{ site.github }}">github</a>
+                </li>
+                <li><a href="https://twitter.com/{{ site.twitter }}">twitter</a>
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="large-8 columns">
+    <div class="large-9 medium-10 columns">
       {{ content }}
     </div>
     <!-- </div> -->
@@ -48,10 +56,15 @@
   <div class="row">
     <div class="footer">
       <!-- <div class="contact"> -->
-      <div class="large-12">
-
-      </div>
-
+      <ul class="footer_links">
+        <li>{{ site.email }}</li>
+        <li><a href="{{ site.url }}/cv" target="_blank">resume</a>
+        </li>
+        <li><a href="https://github.com/{{ site.github }}">github</a>
+        </li>
+        <li><a href="https://twitter.com/{{ site.twitter }}">twitter</a>
+        </li>
+      </ul>
 
     </div>
   </div>
@@ -59,7 +72,7 @@
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
   <script>
-    $(document).foundation();
+  $(document).foundation();
   </script>
 
 </body>
