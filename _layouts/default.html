@@ -20,43 +20,47 @@
 <body>
   <div class="row">
     <!-- <div class="site"> -->
-    <div class="large-3 medium-2 columns">
-      <div class="header">
-        <h4 class="title"><a href="/">{{ site.name }}</a>
-        </h4>
-        <div class="show-for-large-up">
-          <div class="circular gravatar-lg show-for-large-up"></div>
-          <div class="circular gravatar-sm show-for-medium-up"></div>
-          <p>
-            <strong>{{ site.job_title }}</strong>
-          </p>
-          <!-- <a class="extra" href="/">home</a> -->
-          <div class="contact">
-            <p>
-              <ul>
-                <li>{{ site.email }}</li>
-                <li><a href="{{ site.url }}/cv" target="_blank">resume</a>
-                </li>
-                <li><a href="https://github.com/{{ site.github }}">github</a>
-                </li>
-                <li><a href="https://twitter.com/{{ site.twitter }}">twitter</a>
-                </li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="large-3 medium-2 small-2 columns">
+      <h4 class="title show-for-medium-up"><a href="/">{{ site.name }}</a>
+      </h4>
+      <div class="circular gravatar-lg show-for-large-up"></div>
+      <div class="circular gravatar-sm show-for-medium"></div>
+      <ul class="side-nav show-for-medium-up">
+        <li>{{ site.email }}</li>
+        <li>
+          <a href="{{ site.url }}/cv" target="_blank">resume</a>
+        </li>
+        <li>
+          <a href="https://github.com/{{ site.github }}">github</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/{{ site.twitter }}">twitter</a>
+        </li>
+      </ul>
     </div>
+    <div class="large-9 medium-10 columns show-for-medium-up">
 
-    <div class="large-9 medium-10 columns">
       {{ content }}
     </div>
     <!-- </div> -->
+    <div class="row show-for-small">
+      <div class="small-12 columns">
+      <ul class="show-for-small contact">
+        <strong>{{ site.name }}</strong>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </li>
+        <li><a href="http://twitter.com/{{ site.twitter }}">@{{ site.twitter }}</a>
+        </li>
+      </ul>
+      {{ content }}
+    </div>
   </div>
+  </div>
+
   <div class="row">
     <div class="footer">
       <!-- <div class="contact"> -->
-      <ul class="footer_links">
+      <ul class="footer_links show-for-small">
         <li>{{ site.email }}</li>
         <li><a href="{{ site.url }}/cv" target="_blank">resume</a>
         </li>

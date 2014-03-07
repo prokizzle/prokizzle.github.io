@@ -4,17 +4,14 @@ title: Your New Jekyll Site
 ---
 
 <div id="home">
-  <h1>archive</h1>
   <ul class="posts">
     {% for post in site.posts %}
     <div class="row">
-      <li class="article_link">
-        <div class="large-8 medium-6 small-10 columns">
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </div>
-        <div class="large-4 medium-6 columns show-for-medium-up">
-          <span>{{ post.date | date_to_string }}</span>
-        </div>
+      <li>
+        <!-- <div class=""> -->
+          <a href="{{ post.url }}" class="large-8 medium-8 small-8 columns">{{ post.title }}</a>
+        <!-- </div> -->
+          <span class="post_date">{{ post.date | date_to_string }}</span>
       </li>
     </div>
     {% endfor %}
