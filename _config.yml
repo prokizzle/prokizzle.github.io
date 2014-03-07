@@ -8,4 +8,4 @@ github: prokizzle
 linkedin:
 title: Nick Prokesch
 gravatar: 068dacb310f3395cd781e2a7cc729c63
-permalink: /:title
+permalink: /blog/:title
