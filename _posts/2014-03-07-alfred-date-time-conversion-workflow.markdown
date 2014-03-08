@@ -2,7 +2,7 @@
 layout: post
 title: "Converting DateTime Formats with Alfred"
 date: 2014-03-07 18:30
-categories: alfred
+categories: [alfred, datetime, epoch, time, conversion, workflow]
 published: true
 ---
 
