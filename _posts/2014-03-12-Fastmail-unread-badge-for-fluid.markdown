@@ -6,7 +6,7 @@ external-url:
 categories: [fastmail, fluid, badge, userscript]
 ---
 
-A while back, I made the switch from using Gmail as my primary email account to using [Fastmail](http://www.fastmail.fm). I subscribe to the belief that if you're not paying for it, you're not a customer. I also like to pay to support the software I appreciate.
+A while back, I made the switch from using Gmail as my primary email account to using [Fastmail](http://www.fastmail.fm). I subscribe to the belief that if [you're not paying for it, you're not a customer](https://xkcd.com/1150/). I also like to pay to support the software I appreciate.
 
 Regardless, I use Fastmail as a site-specific app via [Fluid](http://fluidapp.com). The current userscript for getting the unread mail count badge on [userscripts.org] seems a lot longer than necessary. 
 
