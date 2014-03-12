@@ -11,7 +11,7 @@ A while back, I made the switch from using Gmail as my primary email account to 
 Regardless, I use Fastmail as a site-specific app via [Fluid](http://fluidapp.com). The current userscript for getting the unread mail count badge on [userscripts.org] seems a lot longer than necessary. 
 
 This is the existing code:
-
+{% highlight javascript %}
     // ==UserScript==
     // @name pipo1
     // @description pipo2
@@ -58,9 +58,10 @@ This is the existing code:
             window.fluid.dockBadge = '';
         }
     }
-
+{% endhighlight %}
 A much simplified version via [Max Masnick](http://protips.maxmasnick.com/fastmail-plus-fluid-unread-messages-badge-userscript):
 
+{% highlight javascript %}
     window.fluid.dockBadge = '';
     setTimeout(updateDockBadge, 1000);
     setTimeout(updateDockBadge, 3000);
@@ -75,9 +76,10 @@ A much simplified version via [Max Masnick](http://protips.maxmasnick.com/fastma
         window.fluid.dockBadge = count;
       }
     }
-
+{% endhighlight %}
 Unfortunately, this doesn't work, probably because Fastmail made a small change to their code. Here is my modified code, to make it work properly:
 
+{% highlight javascript %}
     window.fluid.dockBadge = '';
     setTimeout(updateDockBadge, 1000);
     setTimeout(updateDockBadge, 3000);
@@ -92,5 +94,5 @@ Unfortunately, this doesn't work, probably because Fastmail made a small change 
         window.fluid.dockBadge = count;
       }
     }
-
+{% endhighlight %}
 Now my Fluid Fastmail app perfectly displays unread counts in my OS X Dock. Success!
