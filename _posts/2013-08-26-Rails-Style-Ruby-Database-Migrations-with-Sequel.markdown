@@ -12,10 +12,12 @@ If you've ever worked with [ActiveRecord][6274-001] databases, you know how awes
 
 Before I figured this out, I was applying migrations in a very hacky way[^task-method]. I had a tasks method that was invoked when my global database class was instantiated:
 
+{% highlight ruby %}
     def db_tasks
         @db.exec("alter table users add column age integer") rescue false
         @db.exec("alter table users add column subscriber boolean") rescue false
     end
+    {% endhighlight %}
 
 Every time I needed to modify or create a table, I'd add a line to it. This can get messy the more you need to change the database schema. Enter the [Sequel][6274-004] gem.
 
@@ -23,6 +25,7 @@ Every time I needed to modify or create a table, I'd add a line to it. This can 
 
 I have a directory set up within my project's root `db/migrations` which has indexed migration files like `001_create_users_table.rb`, `002_add_primary_key_to_users_table.rb`, etc. The syntax for the files is pretty straight forward:
 
+{% highlight ruby %}
     Sequel.migration do
       change do
         create_table :users do
@@ -32,9 +35,11 @@ I have a directory set up within my project's root `db/migrations` which has ind
         end
       end
     end
+    {% endhighlight %}
 
 To apply this from the command line, you run `sequel -m /path/to/migrations/dir /path/to/db` and migrations are applied in order. I prefer the standard Rails command `rake db:migrate` so I created a rake tasks to wrap the command line argument.  This is what my [Rakefile][6274-005] looks like:
 
+{% highlight ruby %}
     namespace :db do
       task :migrate do
         result = %x{sequel -m db/migrations/ -E postgres://localhost/db}
@@ -55,6 +60,7 @@ To apply this from the command line, you run `sequel -m /path/to/migrations/dir 
         @db.db_tasks
       end
     end
+    {% endhighlight %}
 
 Now, to create the database I run `rake db:create`,  to migrate changes I run `rake db:migrate`[^1], and to run any arbitrary tasks that I still keep in my database class, I can run `rake db:tasks`without having to worry about them executing every time I create an instance of the class.
 
