@@ -8,3 +8,4 @@ github: prokizzle
 title: Nick Prokesch
 gravatar: 068dacb310f3395cd781e2a7cc729c63
 permalink: /blog/:title
+baseurl: http://nick.prokes.ch
