@@ -4,7 +4,7 @@ pygments: true
 email: nick@prokes.ch
 job_title: junior ruby developer
 twitter: prokizzle
-github: prokizzle
+github_name: prokizzle
 title: Nick Prokesch
 gravatar: 068dacb310f3395cd781e2a7cc729c63
 permalink: /blog/:title
