@@ -21,7 +21,7 @@ namespace :posts do
     file_title = title.gsub(/\s/, '-')
     filename = d.strftime("%Y-%m-%d-#{file_title}.markdown")
     %x{touch _posts/#{filename}}
-       header = "---\nlayout: post\ntitle: #{title.title_case}\ncomments: true\nexternal-url:\ncategories: \n---"
+       header = "---\nlayout: post\ntitle: #{title.title_case}]\nexternal-url:\ncategories: \n---"
        File.open("_posts/#{filename}", 'w') { |file| file.write(header) }
   end
 end
