@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My Perfect Hotel Room Tech Setup]
+title: My Perfect Hotel Room Tech Setup
 categories: [hotel, wifi, setup, configuration]
 ---
 
