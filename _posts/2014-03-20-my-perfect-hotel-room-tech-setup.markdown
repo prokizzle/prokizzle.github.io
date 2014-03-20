@@ -4,6 +4,8 @@ title: My Perfect Hotel Room Tech Setup
 categories: [hotel, wifi, setup, configuration]
 ---
 
+![computer HDTV setup]({{ site.url }}/assets/hotel-tech-setup.png)
+
 I've been in enough hotel rooms (and in the homes of less technically equipped friends) to know what my travel technology kit looks like. When I suspect that I might be in a less-than-ideal environment for connecting and interacting with my devices, I make sure I bring the right gear.
 
 ## The Essentials:
