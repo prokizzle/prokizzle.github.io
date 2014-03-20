@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mixed Up Text Messages]
+title: Mixed Up Text Messages
 external-url:
 categories: [sms, bugs]
 ---
