@@ -1,6 +1,6 @@
 name: Nick Prokesch
 markdown: redcarpet
-pygments: true
+highligher: pygments
 email: nick@prokes.ch
 job_title: junior ruby developer
 twitter: prokizzle
