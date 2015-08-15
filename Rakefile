@@ -22,8 +22,7 @@ namespace :posts do
     filename = d.strftime("%Y-%m-%d-#{file_title}.markdown")
     %x{touch _posts/#{filename}}
        header = "---\nlayout: post\ntitle: #{title.title_case}\nexternal-url:\ncategories: \n---"
-       %x{touch "_posts/#{filename}"}
-       %x{slime "_posts/#{filename}"}
-       # %x{$EDITOR _posts/#{filename}}
-       end
-       end
+       File.open("_posts/#{filename}", 'w') { |file| file.write(header) }
+       %x{$EDITOR _posts/#{filename}}
+          end
+          end
