@@ -6,7 +6,7 @@ categories: [Rails, Ruby, Optimization]
 
 This week, I made our production rails app _fast_. During development, our staging site was showing 6 second load times or more. That's not acceptable. So I scoured the internet, and I read every article on caching I could find. It turns out, there's a lot you can do with Rails to make some serious performance increases.
 
-First, setup `rack-cache` using [redis-store](https://github.com/redis-store/redis-store). This will make some local caching improvements. Then thoroughly read the Rails API's page on the Asset Pipeline. You'll want make sure you set Cache Control to public so that your browser will cache your assets.
+First, setup `rack-cache` using [redis-store](https://github.com/redis-store/redis-store). This will make some local caching improvements. Then thoroughly read the [Rails API's page on the Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html). You'll want make sure you set Cache Control to public so that your browser will cache your assets.
 
 Then, on AWS, I setup the ELB load balancer to handle SSL termination. The ELB will accept both HTTP and HTTPS, but both are forwarded to the instances as HTTP, so that nginx no longer has to handle certificates, and I can keep that out of my Chef cookbooks. If nginx sees that an HTTP request is coming through, it will serve a 301 permenant redirect to https, so that it comes back through the load balancer as https. Luckily, [ELB delivers a header to indicate which protocol](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-listener-config.html) was requested by the client.
 
