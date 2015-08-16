@@ -7,7 +7,7 @@ categories:
 
 The other day, I was wondering why I can't ignore files in git from the the command line. Unlike some of my co-workers, I don't like using GUI apps for everything, but I still like a little but of automation or simplification on the command line. Do I really need to open .gitignore and add some files or patterns to it? No thanks. Then I googled a bit, and I found [git-extras](https://github.com/tj/git-extras). I found the motherlode of git awesomeness.
 
-Reading the README was almost like reading the first Harry Potter book for the first time. I was all smile, re-reading all sorts of things, and texting my friends, telling them that I had no idea what I'd been missing. I highly encourage you to go through it, but I'll share some of my favorite features.
+Reading the README was almost like reading the first Harry Potter book for the first time. I was all smiles, re-reading all sorts of things, and texting my friends, telling them that I had no idea what I'd been missing. I highly encourage you to go through it, but I'll share some of my favorite features.
 
 ### Merge Into
 
