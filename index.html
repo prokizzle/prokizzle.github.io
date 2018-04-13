@@ -1,74 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://v4-alpha.getbootstrap.com/examples/cover/cover.css">
-    </head>
-    <body>
-        <div class="site-wrapper">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://v4-alpha.getbootstrap.com/examples/cover/cover.css">
+  </head>
+  <body>
+    <div class='site-wrapper'>
 
-            <div class="site-wrapper-inner">
+      <div class="site-wrapper-inner">
 
-                <div class="cover-container">
+        <div class="cover-container">
 
-                    <div class="masthead clearfix">
-                        <div class="inner">
-                            <h3 class="masthead-brand">Nick Prokesch</h3>
-                            <nav class="nav nav-masthead">
-                                <a class='nav-link active' href='nick@prokes.ch' target="_blank">Email Me</a>
-                                <a class="nav-link" href="https://s3.amazonaws.com/prokizzle-cv/Nick_Prokesch_visualcv_resume.pdf" target="_blank">Resume</a>
-                                <a class="nav-link" href="https://calendly.com/prokizzle" target="_blank" >Schedule a Call</a>
-                            </nav>
-                        </div>
-                    </div>
-
-                    <div class="inner cover">
-                        <h1 class="cover-heading">Full Stack Ruby & Javascript Developer</h1>
-                        <p class='align-center'>
-                            <img class='img-thumbnail' src='https://en.gravatar.com/userimage/17578198/516b4ab884ca5fe62b72d26a63468f04?size=200'>
-                        </p>
-                        <p class="lead">
-                        <ul>
-                            <span class='badge badge-secondary'>I build platforms on APIs</span>
-                            <span class='badge badge-secondary'>React & RubyOnRails developer</span>
-                            <span class='badge badge-secondary'>in love with the front-end</span>
-                            <span class='badge badge-secondary'>pun enthusiast</span>
-                            <span class='badge badge-secondary'>dad joke advocator</span>
-                            <span class='badge badge-secondary'>taco snob</span>
-                            <span class='badge badge-secondary'>really into AWS</span>
-                            <span class='badge badge-secondary'>devops 4 fun</span>
-                        </ul>
-                        </p>
-                        <p class="lead">
-                        <a href="https://instagram.com/prokizzle" target="_blank" class="btn btn-lg btn-secondary">
-                            <i class='fa fa-instagram mx-2'></i>Instagram
-                        </a>
-                        <a href="https://github.com/prokizzle" target="_blank" class="btn btn-lg btn-secondary">
-                            <i class='fa fa-github mx-2'></i>GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/nickprokesch/" target="_blank" class="btn btn-lg btn-secondary">
-                            <i class='fa fa-linkedin mx-2'></i>LinkedIn
-                        </a>
-                        <a href="https://medium.com/@nprokesch" target="_blank" class="btn btn-lg btn-secondary">
-                            <i class='fa fa-medium mx-2'></i>Medium
-                        </a>
-                        </p>
-                    </div>
-
-                    <div class="mastfoot">
-                        <div class="inner">
-                        </div>
-                    </div>
-
-                </div>
-
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Nick Prokesch</h3>
+              <nav class="nav nav-masthead">
+                <a class='nav-link active' href='mailto:nick@prokes.ch' target="_blank">Email Me</a>
+                <a class="nav-link" href="https://s3.amazonaws.com/prokizzle-cv/Nick_Prokesch_visualcv_resume.pdf" target="_blank">Resume</a>
+                <a class="nav-link" href="https://calendly.com/prokizzle" target="_blank" >Schedule a Call</a>
+              </nav>
             </div>
+          </div>
+
+          <div class="inner cover" id="app">
+            <h1 class="cover-heading">Full Stack Ruby & Javascript Developer</h1>
+            <p class='align-center'>
+            <img class='img-thumbnail' src='https://en.gravatar.com/userimage/17578198/516b4ab884ca5fe62b72d26a63468f04?size=200'>
+            </p>
+            <p class="lead">
+            <div v-for="point in sellingPoints">
+              <span class='badge badge-secondary'>{{ point }} </span>
+            </div>
+            </p>
+            <p class="lead">
+            <div v-for="profile in socialProfiles">
+              <a href="{{ profile.url }}" target="_blank" class="btn btn-lg btn-secondary">
+                <i class='fa {{ profile.iconClass }}  mx-2'></i>{{ profile.name }}
+              </a>
+            </div>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+            </div>
+          </div>
 
         </div>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-        <script src="https://use.fontawesome.com/0f1e5c53b2.js"></script>
-    </body>
+      </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./dist/bundle.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/0f1e5c53b2.js"></script>
+  </body>
 </html>
