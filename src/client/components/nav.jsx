@@ -1,38 +1,52 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import styles from "../styles/nav.css"; // eslint-disable-line no-unused-vars
+import 'bootstrap'
+import '../styles/custom.scss';
+import classNames from "classnames";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 
-export class Nav extends Component {
+export class GlobalNav extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const navs = [["Home", ""], ["Demo1", "demo1"], ["Demo2", "demo2"]];
+    const navs = [
+      { label: "Email Me", url: "mailto:nick@prokes.ch" },
+      {
+        label: "Resume/CV",
+        url: "https://s3.amazonaws.com/prokizzle-cv/Nick_Prokesch_visualcv_resume.pdf"
+      },
+      { label: "Schedule a Call", url: "https://calendly.com/prokizzle" }
+    ];
     const currentTab = this.props.location.pathname.replace("/", "");
     return (
-      <ul styleName={"styles.bar"}>
-        {navs.map((x, i) => {
-          const s = `styles.base${currentTab === x[1] ? " styles.active" : ""}`;
-          return (
-            <li key={i} styleName={s}>
-              <Link to={`/${x[1]}`}>{x[0]}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <Navbar dark color="dark" expand="md">
+        <Collapse isOpen={true} navbar>
+          <Nav className="ml-auto" navbar>
+            {navs.map((x, i) => {
+              const navItemClass = classNames({ active: currentTab === x.url });
+              return (
+                <Nav>
+                  <NavLink to={x.url}>{x.label}</NavLink>
+                </Nav>
+              );
+            })}
+          </Nav>
+        </Collapse>
+      </Navbar>
     );
   }
 }
 
-Nav.propTypes = {
+GlobalNav.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string
   })
 };
 
-Nav.defaultProps = {
+GlobalNav.defaultProps = {
   location: {
     pathname: ""
   }

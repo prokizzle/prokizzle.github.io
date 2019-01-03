@@ -14,14 +14,13 @@
  *
  */
 
-import React from "react";
-import { connect } from "react-redux";
-import "../styles/raleway.css";
-import custom from "../styles/custom.css"; // eslint-disable-line no-unused-vars
-import electrodePng from "../images/electrode.png";
-import { DemoButtons } from "./demo-buttons";
-import { Nav } from "./nav";
-
+import React from 'react';
+import { connect } from 'react-redux';
+import electrodePng from '../images/electrode.png';
+import '../styles/custom.scss';
+import { GlobalNav } from './nav';
+import LazyHero from 'react-lazy-hero';
+import { Badge, Container, Col, Row } from 'reactstrap';
 
 class Home extends React.Component {
   constructor(props) {
@@ -29,21 +28,30 @@ class Home extends React.Component {
   }
 
   render() {
+    const skills = [
+      { id: 0, name: 'react' },
+      { id: 1, name: 'redux' },
+      { id: 2, name: 'ruby on rails' },
+      { id: 3, name: 'javascript' },
+      { id: 4, name: 'CSS3' },
+      { id: 5, name: 'HTML5' }
+    ];
     return (
-      <div styleName={"custom.container"}>
-        <Nav {...this.props} />
+      <div styleName={'custom.container'}>
+        <GlobalNav {...this.props} />
 
-        {/**/}
-
-        <section styleName={"custom.header"}>
-          <h2>
-            <span>Hello from </span>
-            <a href="https://github.com/electrode-io">
-              {"Electrode"}
-              <img src={electrodePng} />
-            </a>
-          </h2>
-        </section>
+        <LazyHero imageSrc="https://unsplash.it/2000/1000">
+          <h1>Nick Prokesch</h1>
+          <div className="text-center">
+            <Row>
+              <Col>
+                {skills.map(skill => (
+                  <Badge key={skill.id} children={skill.name} className='mr-1'/>
+                ))}
+              </Col>
+            </Row>
+          </div>
+        </LazyHero>
       </div>
     );
   }
