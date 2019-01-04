@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Badge, Container, Col, Row } from "reactstrap";
+import { Badge, Col, Row } from "reactstrap";
 import LazyHero from "react-lazy-hero";
 
 export default class extends PureComponent {
@@ -10,7 +10,7 @@ export default class extends PureComponent {
       { id: 2, name: "ruby on rails" },
       { id: 3, name: "javascript" },
       { id: 4, name: "CSS3" },
-      { id: 5, name: "HTML5" }
+      { id: 5, name: "HTML5" },
     ];
     return (
       <LazyHero imageSrc="https://unsplash.it/2000/1000">

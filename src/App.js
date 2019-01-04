@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
+import "bootstrap";
+
 import "./App.scss";
 import Home from "./Home";
-import "bootstrap";
 
 class App extends PureComponent {
   render() {

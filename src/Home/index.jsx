@@ -1,13 +1,10 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import GlobalNav from "../GlobalNav";
 import Hero from "../Hero";
 import Projects from "../Projects";
+import Technologies from "../Technologies";
 
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+class Home extends PureComponent {
   render() {
     return (
       <div>
@@ -16,6 +13,7 @@ class Home extends React.Component {
         <Hero />
 
         <Projects />
+        <Technologies />
       </div>
     );
   }
