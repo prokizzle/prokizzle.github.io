@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import "bootstrap";
 
 import "./App.scss";
-import Home from "./Home";
+import Home from "../Home";
 
 class App extends PureComponent {
   render() {
