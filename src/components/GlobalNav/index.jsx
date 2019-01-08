@@ -1,7 +1,9 @@
 import React, { PureComponent } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
+import { toggleMenu } from "../../actions/global.actions";
 
 class GlobalNav extends PureComponent {
   render() {
@@ -14,21 +16,26 @@ class GlobalNav extends PureComponent {
       },
       { id: 2, label: "Schedule a Call", url: "https://calendly.com/prokizzle" },
     ];
+
     const {
       location: { pathname },
     } = this.props;
+    
     const currentTab = pathname.replace("/", "");
+    
+    const { isOpen, toggleMenuAction } = this.props;
+    
     return (
       <Navbar dark color="dark" expand="md">
         <NavbarBrand href="/">nick.prokes.ch</NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse navbar>
+        <NavbarToggler onClick={toggleMenuAction} />
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            {navs.map((x, i) => {
-              const navItemClass = classNames({ active: currentTab === x.url });
+            {navs.map((navItem, i) => {
+              const navItemClass = classNames({ active: currentTab === navItem.url });
               return (
-                <NavItem className={navItemClass} key={x.id}>
-                  <NavLink to={x.url}>{x.label}</NavLink>
+                <NavItem className={navItemClass} key={navItem.id}>
+                  <NavLink to={navItem.url}>{navItem.label}</NavLink>
                 </NavItem>
               );
             })}
@@ -43,12 +50,24 @@ GlobalNav.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }),
+  isOpen: PropTypes.bool,
+  toggleMenuAction: PropTypes.func.isRequired,
 };
 
 GlobalNav.defaultProps = {
   location: {
     pathname: "",
   },
+  isOpen: false,
 };
 
-export default GlobalNav;
+const mapStateToProps = ({ menuOpened }) => ({ isOpen: menuOpened });
+
+const mapDispatchToProps = dispatch => ({
+  toggleMenuAction: () => dispatch(toggleMenu()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GlobalNav);

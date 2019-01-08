@@ -3,6 +3,7 @@ import GlobalNav from "../GlobalNav";
 import Hero from "../Hero";
 import Projects from "../Projects";
 import Technologies from "../Technologies";
+import SocialProfiles from "../SocialProfiles";
 
 class Home extends PureComponent {
   render() {
@@ -12,6 +13,7 @@ class Home extends PureComponent {
 
         <Hero />
 
+        <SocialProfiles />
         <Projects />
         <Technologies />
       </div>

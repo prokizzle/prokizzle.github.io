@@ -12,7 +12,7 @@ export default class extends PureComponent {
     ];
     return (
       <Container className="my-5">
-        <h2>Technologies Used on This Page</h2>
+        <h3>Technologies Used on This Page</h3>
         <Row>
           {technologies.map(({ name, id, logo }) => (
             <Col key={id}>
