@@ -4,8 +4,12 @@ import { fetchRepos } from "../../actions/projects.actions";
 
 class Projects extends PureComponent {
   static propTypes = {
-    fetchProjectRepos: PropTypes.func.isRequired,
+    fetchProjectRepos: PropTypes.func,
   };
+
+  static defaultProps = {
+    fetchProjectRepos: () => ()
+  }
 
   componentDidMount() {
     const { fetchProjectRepos } = this.props;
