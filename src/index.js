@@ -5,13 +5,13 @@ import { Provider } from "react-redux";
 import "./index.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import globalReducer from "./reducers/global.reducer";
+import rootReducer from "./reducers/root.reducer";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
 library.add(fab);
 
-const store = createStore(globalReducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>

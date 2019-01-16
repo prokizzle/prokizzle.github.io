@@ -2,6 +2,7 @@
   "name": "professional-landing-page",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://prokizzle.github.io",
   "dependencies": {
     "@babel/core": "7.1.6",
     "@babel/plugin-transform-react-jsx": "^7.2.0",
@@ -77,6 +78,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "predeploy":"yarn run build",
+    "deploy":"gh-pages -d build",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -140,6 +143,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "^3.0.1",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.15.3",
     "redux-devtools": "^3.5.0"
   }

@@ -1,6 +1,17 @@
 import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import { fetchRepos } from "../../actions/projects.actions";
 
-export default class extends PureComponent {
+class Projects extends PureComponent {
+  static propTypes = {
+    fetchProjectRepos: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
+    const { fetchProjectRepos } = this.props;
+    fetchProjectRepos();
+  }
+
   render() {
     const projects = [];
     if (projects.length === 0) return <div />;
@@ -11,3 +22,8 @@ export default class extends PureComponent {
     );
   }
 }
+
+const mapStateToProps = () => ({});
+const mapDispatchToProps = dispatch => ({ fetchProjectRepos: () => dispatch(fetchRepos()) });
+
+export default Projects;
