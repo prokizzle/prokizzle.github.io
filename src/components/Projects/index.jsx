@@ -8,7 +8,7 @@ class Projects extends PureComponent {
   };
 
   static defaultProps = {
-    fetchProjectRepos: () => ()
+    fetchProjectRepos: () => {}
   }
 
   componentDidMount() {
