@@ -1,6 +1,12 @@
 import React, { PureComponent } from "react";
 import { Card, CardBody, CardTitle, Col, Row, Container } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styled from "styled-components";
+
+const CardLink = styled.a`
+  text-decoration: none;
+  color: #000000;
+`;
 
 export default class extends PureComponent {
   render() {
@@ -23,7 +29,9 @@ export default class extends PureComponent {
                 <CardBody>
                   <FontAwesomeIcon icon={["fab", profile.logo]} size="3x" />
                 </CardBody>
-                <CardTitle>{profile.name}</CardTitle>
+                <CardLink href={profile.url}>
+                  <CardTitle>{profile.name}</CardTitle>
+                </CardLink>
               </Card>
             </Col>
           ))}
