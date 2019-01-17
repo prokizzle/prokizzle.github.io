@@ -4,6 +4,7 @@ import Hero from "../Hero";
 import Projects from "../Projects";
 import Technologies from "../Technologies";
 import SocialProfiles from "../SocialProfiles";
+import EmploymentHistory from "../EmploymentHistory";
 
 class Home extends PureComponent {
   render() {
@@ -13,6 +14,7 @@ class Home extends PureComponent {
 
         <Hero />
 
+        <EmploymentHistory />
         <SocialProfiles />
         <Projects />
         <Technologies />
