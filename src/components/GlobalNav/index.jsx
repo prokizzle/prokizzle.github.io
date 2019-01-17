@@ -20,11 +20,11 @@ class GlobalNav extends PureComponent {
     const {
       location: { pathname },
     } = this.props;
-    
+
     const currentTab = pathname.replace("/", "");
-    
+
     const { isOpen, toggleMenuAction } = this.props;
-    
+
     return (
       <Navbar dark color="dark" expand="md">
         <NavbarBrand href="/">nick.prokes.ch</NavbarBrand>
@@ -35,7 +35,9 @@ class GlobalNav extends PureComponent {
               const navItemClass = classNames({ active: currentTab === navItem.url });
               return (
                 <NavItem className={navItemClass} key={navItem.id}>
-                  <NavLink to={navItem.url}>{navItem.label}</NavLink>
+                  <NavLink href={navItem.url} target="_blank">
+                    {navItem.label}
+                  </NavLink>
                 </NavItem>
               );
             })}
