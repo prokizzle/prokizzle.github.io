@@ -1,7 +1,7 @@
 export const TOGGLE_MENU = "TOGGLE_MENU";
 export const RESET_MENU = "RESET_MENU";
 
-export function toggleMenu(payload = {}) {
+export function toggleMenu() {
   return { type: TOGGLE_MENU };
 }
 

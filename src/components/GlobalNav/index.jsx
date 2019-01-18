@@ -30,7 +30,7 @@ class GlobalNav extends PureComponent {
     return (
       <Navbar dark color="dark" expand="md" fixed="top">
         <NavbarBrand href="/">nick.prokes.ch</NavbarBrand>
-        <NavbarToggler onClick={toggleMenuAction} />
+        <NavbarToggler onClick={() => toggleMenuAction()} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             {navs.map((navItem, i) => {
@@ -66,7 +66,7 @@ GlobalNav.defaultProps = {
   isOpen: false,
 };
 
-const mapStateToProps = ({ menuOpened }) => ({ isOpen: menuOpened });
+const mapStateToProps = ({ global }) => ({ isOpen: global.menuOpened });
 
 const mapDispatchToProps = dispatch => ({
   toggleMenuAction: () => dispatch(toggleMenu()),
