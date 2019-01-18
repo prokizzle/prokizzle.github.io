@@ -5,13 +5,19 @@ import { Provider } from "react-redux";
 import "./index.scss";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faBold } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBold,
+  faDownload,
+  faPaperclip,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import rootReducer from "./reducers/root.reducer";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
 library.add(fab);
-library.add(faBold);
+library.add(faBold, faPaperclip, faDownload, faEnvelope, faPhone);
 
 const store = createStore(rootReducer);
 
