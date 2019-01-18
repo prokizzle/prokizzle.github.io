@@ -17,6 +17,7 @@ const workHistory = [
     skills: ["react", "javascript", "ES6"],
     gapExplanation:
       "Contract ended following conclusion of previos projects. Two months of interviewing for positions",
+    dateLabelColor: "#61b8ff",
   },
   {
     id: 1,
@@ -41,6 +42,7 @@ const workHistory = [
     skills: ["react", "hapi.js", "ramda", "mongodb", "redux"],
     gapExplanation:
       "Following layoffs when previous company downsized, took time off for personal and family reasons",
+    dateLabelColor: "#61b8ff",
   },
   {
     id: 3,
@@ -86,6 +88,7 @@ const workHistory = [
       "redis",
       "crawlers/scrapers",
     ],
+    dateLabelColor: "#61b8ff",
   },
 ];
 
@@ -107,6 +110,7 @@ class EmploymentHistory extends PureComponent {
             <TimelineItem
               className="vertical-timeline-element--work"
               dateText={gig.dates}
+              dateInnerStyle={gig.dateLabelColor ? { background: gig.dateLabelColor } : null}
               key={gig.id}
               icon={<img src="https://via.placeholder.com/50" />}
             >
