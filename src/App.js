@@ -1,7 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Link, Box, Flex } from "rebass/styled-components";
+import { Helmet } from "react-helmet";
 import Gravatar from "react-gravatar";
 import { map } from "ramda";
 import styled from "styled-components";
@@ -12,14 +11,25 @@ const links = [
   {
     title: "Professional CV/Resume",
     href:
-      "https://prokizzle-cv.s3.amazonaws.com/Nick_Prokesch_VisualCV_Resume.pdf"
+      "https://prokizzle-cv.s3.amazonaws.com/Nick_Prokesch_VisualCV_Resume.pdf",
   },
-  { title: "My Medium Articles", href: "https://medium.com/@nprokesch" }
+  { title: "My Medium Articles", href: "https://medium.com/@nprokesch" },
 ];
 
 function App() {
   return (
     <Container>
+      <Helmet>
+        <meta
+          property="og:image"
+          content="https://www.gravatar.com/avatar/c851ad317391baf69de8f139a9201f0e?d=retro&r=g&s=600"
+        />
+        <meta property="og:title" content="Nick Prokesch | Software Engineer" />
+        <meta
+          property="og:description"
+          content="A front-end software engineer with a passion for fitness, mental health, solving problems, and getting outside my comfort zone"
+        />
+      </Helmet>
       <Header>
         <h1>Nick Prokesch</h1>
         <h2>Front-end Web Developer</h2>
@@ -85,7 +95,7 @@ const Button = styled.a`
 
   &:hover {
     background-color: inherit;
-    border: 1px solid #007BC7;
+    border: 1px solid #007bc7;
     color: black;
   }
 
