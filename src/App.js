@@ -10,8 +10,7 @@ const links = [
   { title: "GitHub", href: "https://github.com/prokizzle" },
   {
     title: "Professional CV/Resume",
-    href:
-      "https://prokizzle-cv.s3.amazonaws.com/Nick_Prokesch_VisualCV_Resume.pdf",
+    href: "https://prokizzle-cv.s3.amazonaws.com/Resume.pdf",
   },
   { title: "My Medium Articles", href: "https://medium.com/@nprokesch" },
 ];
